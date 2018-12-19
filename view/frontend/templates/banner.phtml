@@ -1,0 +1,49 @@
+<?php
+/** @var Maximuspoder\Banner\Block\Banner $banner */
+$banners = $block->getBannerImages();
+
+?>
+<style>
+    .slider{
+        width: 1200px;
+        height: 1200px;
+        overflow:hidden;
+        position:relative;
+        box-sizing: border-box;
+        white-space: nowrap;
+        margin: 0 auto !important;
+    }
+    .slider > div{
+        position:absolute;
+        animation:move_slide2 16s infinite;
+        opacity:0;
+    }
+    .slider > div:nth-child(1){ animation-delay: 0; }
+    .slider > div:nth-child(2){ animation-delay: 4s; }
+    .slider > div:nth-child(3){ animation-delay: 8s; }
+    .slider > div:nth-child(4){ animation-delay: 12s; }
+
+    @keyframes move_slide{
+        10%{ opacity:1; }
+        80%{ opacity:1; }
+        90%{ opacity:0 }
+    }
+    @keyframes move_slide2{
+        25%{opacity:1;}
+        40%{opacity:0;}
+    }
+</style>
+
+<div class="slider">
+    <?php foreach ($banners as $banner) { ?>
+    <div>
+        <img src="http://maximuspoder.local/pub/media/<?= $banner->getData('image') ?>" >
+        <h3><?= $banner->getData('content') ?></h3>
+    </div>
+    <?php } ?>
+</div>
+
+
+
+
+

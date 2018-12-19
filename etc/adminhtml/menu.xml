@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Maximuspoder_Banner::banners"
+             title="Banners"
+             module="Maximuspoder_Banner"
+             resource="Maximuspoder_Banner::banners"
+             translate="title"
+             sortOrder="20"
+             action="banners"/>
+    </menu>
+</config>
